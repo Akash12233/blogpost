@@ -2,10 +2,16 @@
 import React from 'react';
 import { Box, Flex, Spacer,  useDisclosure, IconButton, Link, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Icon } from '@chakra-ui/react';
 import { HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
-import { FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaGithub,FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const navigate=useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const search=()=>{
+    navigate("/allblogs");
+  }
 
   return (
     <Flex align="center"   color="Black" border={"1px"} borderColor="gray.200" p={"4"} shadow={"lg"}>
@@ -29,15 +35,26 @@ const Navbar: React.FC = () => {
 
       <Box  display={{ base: 'none', md: 'block' }}>|</Box>
       <Box ml="4" mr="4"  display={{ base: 'none', md: 'block' }}>
-          <Icon as={FaInstagram} boxSize={6} />
-          <Icon as={FaFacebook} boxSize={6} ml="3" />
-          <Icon as={FaTwitter} boxSize={6} ml="3" />
+          <Link href="https://www.instagram.com/" isExternal>
+            <Icon as={FaInstagram} boxSize={6} />
+          </Link>
+          <Link href="https://www.twitter.com/AkashTa47332668" isExternal ml="3">
+            <Icon as={FaTwitter} boxSize={6} />
+          </Link>
+          <Link href="https://www.github.com/Akash12233" isExternal ml="3">
+            <Icon as={FaGithub} boxSize={6} />
+          </Link>
+          <Link href="https://www.linkedin.com/in/akash-tayade-23453322a/" isExternal ml="3">
+            <Icon as={FaLinkedin} boxSize={6} />
+          </Link>
+          <Link href="#" isExternal ml="3">
           <Icon as={FaEnvelope} boxSize={6} ml="3" />
-        </Box>
+          </Link>
+      </Box>
       
         <Box  display={{ base: 'none', md: 'block' }}>|</Box>
       
-      <IconButton icon={<SearchIcon />} aria-label="Search" m={"4"} />
+        <IconButton icon={<SearchIcon />} onClick={search} aria-label="Search" m={"4"} />
 
       {/* Mobile navigation */}
       <Box display={{ base: 'block', md: 'none' }}>
@@ -62,10 +79,21 @@ const Navbar: React.FC = () => {
               Contact
             </Link>
 
+          <Link href="https://www.instagram.com/" isExternal>
             <Icon as={FaInstagram} boxSize={6} />
-            <Icon as={FaFacebook} boxSize={6} ml="3" />
-            <Icon as={FaTwitter} boxSize={6} ml="3" />
-            <Icon as={FaEnvelope} boxSize={6} ml="3" />
+          </Link>
+          <Link href="https://www.twitter.com/AkashTa47332668" isExternal ml="3">
+            <Icon as={FaTwitter} boxSize={6} />
+          </Link>
+          <Link href="https://www.github.com/Akash12233" isExternal ml="3">
+            <Icon as={FaGithub} boxSize={6} />
+          </Link>
+          <Link href="https://www.linkedin.com/in/akash-tayade-23453322a/" isExternal ml="3">
+            <Icon as={FaLinkedin} boxSize={6} />
+          </Link>
+          <Link href="#" isExternal ml="3">
+          <Icon as={FaEnvelope} boxSize={6} ml="3" />
+          </Link>
             </Flex>
           </DrawerBody>
         </DrawerContent>

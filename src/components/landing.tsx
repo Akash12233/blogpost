@@ -1,5 +1,8 @@
+import Footer from "../Footer";
 import Navbar from "../Nav";
-import hero from "/hero.jpg"
+import About from "./about";
+import Blog from "./blog";
+import hero from "/hero.jpg";
 import { Box, Flex, Heading, Text, Button } from '@chakra-ui/react';
 
 const Landingpage:React.FC = () => {
@@ -30,15 +33,21 @@ const Landingpage:React.FC = () => {
           Explore the latest blogs and stay updated with our content.
         </Text>
         <Button color="black" size="lg">
-          Read Our Blog
+          Read Blog
         </Button>
       </Flex>
     </Box>
 
     {/* Hero section end */}
     {/*Blog Section 8*/}
+    <Blog/>
+    {/*Blog Section end*/}
+    {/*About Section*/}
+    <About/>
+    {/*Footer Section*/}
+    <Footer/>
+    {/*Footer Section end*/}
 
-    
         </>
     )
 }
