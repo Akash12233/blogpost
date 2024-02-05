@@ -69,13 +69,13 @@ const Navbar: React.FC = () => {
           <DrawerHeader>Blogeze</DrawerHeader>
           <DrawerBody>
             <Flex flexDir="column">
-            <Link href="/about" mb="2" onClick={onClose}>
+            <Link href="/" mb="2" onClick={onClose}>
               About
             </Link>
-            <Link href="/blog" mb="2" onClick={onClose}>
+            <Link href="/" mb="2" onClick={onClose}>
               Blog
             </Link>
-            <Link href="/contact" mb="2" onClick={onClose}>
+            <Link href="/" mb="2" onClick={onClose}>
               Contact
             </Link>
 
